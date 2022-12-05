@@ -1,32 +1,35 @@
-import { Box,  Flex, Heading, Image, Text } from '@chakra-ui/react'
+import { Box,  Flex, Heading, HStack, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 
 const Transactions = () => {
 
     const data=[
-        {image:"https://cdn-icons-png.flaticon.com/512/2761/2761118.png",title:"Jio Mobile App",date:"27 Apr 2022 4:45AM", price:"$15"},
-        {image:"https://cdn-icons-png.flaticon.com/512/2761/2761118.png",title:"Amazon",date:"27 May 2022 4:45AM", price:"$150"},
-        {image:"https://cdn-icons-png.flaticon.com/512/2761/2761118.png",title:"Flipkart",date:"2 Apr 2022 8:45AM", price:"$165"},
-        {image:"https://cdn-icons-png.flaticon.com/512/2761/2761118.png",title:"Jio Mobile App",date:"27 Apr 2022 4:45AM", price:"$85"}    
-    ]
+        {image:"https://elements-cover-images-0.imgix.net/f5996f56-6efb-4d44-8e20-2c66eadba54b?auto=compress&crop=edges&fit=crop&fm=jpeg&h=630&w=1200&s=a0f3183d45d16fb7a048ecd3ddd03236",title:"Jiko Mobile App",date:"12 Nov 2021 4:45AM", price:"$15"},
+        {image:"https://elements-cover-images-0.imgix.net/f5996f56-6efb-4d44-8e20-2c66eadba54b?auto=compress&crop=edges&fit=crop&fm=jpeg&h=630&w=1200&s=a0f3183d45d16fb7a048ecd3ddd03236",title:"Jiko Mobile App",date:"12 Nov 2021 4:45AM", price:"$15"},
+        {image:"https://elements-cover-images-0.imgix.net/f5996f56-6efb-4d44-8e20-2c66eadba54b?auto=compress&crop=edges&fit=crop&fm=jpeg&h=630&w=1200&s=a0f3183d45d16fb7a048ecd3ddd03236",title:"Jiko Mobile App",date:"12 Nov 2021 4:45AM", price:"$15"},
+        {image:"https://elements-cover-images-0.imgix.net/f5996f56-6efb-4d44-8e20-2c66eadba54b?auto=compress&crop=edges&fit=crop&fm=jpeg&h=630&w=1200&s=a0f3183d45d16fb7a048ecd3ddd03236",title:"Jiko Mobile App",date:"12 Nov 2021 4:45AM", price:"$15"},
+        ]
 
     console.log(data)
 
   return (
-       <Box w="240px" bgColor="white" m="auto">
+       <Box w="260px" bgColor="white" p={6}>
+        <Flex gap="20px" direction="column">
             {data.map((el)=>
             (
-                <Box mt="10px">
-                    <Flex justifyContent={"space-between"} gap="10px">
-                        <Image src={el.image} w="40px" h="30px"></Image>
-                        <Flex direction={"column"}>
+               <HStack justifyContent={"space-between"}>
+                        <HStack justifyContent={"space-between"}>
+                            <Image src={el.image} w="50px" h="50px" borderRadius={10}></Image>
+                        <Flex direction={"column"} >
                             <Heading fontSize={"xs"}>{el.title}</Heading>
-                            <Text fontSize={"xs"}>{el.date}</Text>
+                            <Text fontSize={"10px"} color="#c5c5c5">{el.date}</Text>
                             </Flex>
-                        <Heading fontSize={"xs"}>{el.price}</Heading>
-                    </Flex>
-                </Box>
+                            </HStack>
+                        <Heading  fontSize={"xs"}>{el.price}</Heading>
+                    </HStack>
+           
             ))}
+            </Flex>
         </Box>
    
   )
